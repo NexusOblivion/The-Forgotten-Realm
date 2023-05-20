@@ -192,6 +192,7 @@ def stage_two():
             print("Please input an appropriate choice from the list given")
 
 def stage_three():
+    print("text")
     return
 
 if __name__ == '__main__':

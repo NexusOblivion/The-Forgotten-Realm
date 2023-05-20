@@ -19,8 +19,8 @@ The game is played through a command-line interface, where you will enter text c
 
 We would like to express our gratitude to the following resources and projects that inspired and helped us in creating The Forgotten Realm:
 
-- [Text Adventure Game Tutorial](https://example.com) by John Doe
-- [Coding & Such Ep.1](https://www.youtube.com/live/3O8OHiXyG-Q?feature=share) by b001 for inspiration and code snippets
+- [Random Game Idea Generator](https://seblague.github.io/ideagenerator/) by Seb Lague for the game prompt/idea.
+- [Coding & Such Ep.1](https://www.youtube.com/live/3O8OHiXyG-Q?feature=share) by b001 for inspiration and code snippets.
 - [BIG TEXT Letters Font Generator](https://fsymbols.com/generators/tarty/) for providing artwork used in the game.
 
 ## Contact

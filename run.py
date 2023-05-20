@@ -205,9 +205,16 @@ def stage_three():
     while True: #TO DO: potentially make a function for this as the failsafe is used multiple times
         action = input("> ")
         if action == "1":
-            break
+            print("You override the primal temptation to explore the mystifying alleyway and continue through the bustling markets lost to time")
+            print("Approaching a nearby merchant, your footsteps echoed against the dying sense of the city streets drawing the attention of all those around")
+            print("Your prescence wasn't welcomed.")
+            print("Eager to learn about what the f*ck this place was, you lean in and engage with the elderly man")
+            #TO DO: create a function that handles the bulk of NPC dialogue?
         elif action == "2":
-            break
+            print("The alleyway draws you closer as the sinister shadows dance beneath your feet.")
+            print("With a cautious grip, you nudge the door open and it emits a squeal protesting the years of neglect.")
+            print("A sudden gust of stale air laced with a touch of mustiness envelops you, brushing against your face")
+            #Cobwebs, dusty, chest, loot, inventory
         else:
             print("Please pick from one of the options listed!")
 

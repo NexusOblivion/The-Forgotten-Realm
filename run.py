@@ -192,8 +192,24 @@ def stage_two():
             print("Please input an appropriate choice from the list given")
 
 def stage_three():
-    print("text")
-    return
+    print("A sense of awe washes over you")
+    print("Before you stands a sight you could have never prepared to see when intially setting out to explore this realm.")
+    print("A hidden, unknown ancient city, thriving with life stared back at you.")
+    print("The air is filled with a scent of antiquity mixed with a vibrant energy that pulses through the streets. Sunlight spills in through towering structures, casting long shadows on the cobblestone pathways below")
+    print("The city resonates with the hum of activity as all forms of life navigate through the streets - vendors hawking their wares, their attire reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
+    print("You hesistantly begin to walk among them, taking note of their attire which reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
+    print("As you wander through the ancient city further, you stumble upon a narrow alleyway that seems to beckon you with whispered secrets.")
+    print("A flickering lantern casts eerie shadows on the worn cobblestones. Ahead, you notice a small, weathered door partially ajar. What will you do?") #The start of opening up the world to the player
+    print(" [1] - Continue exploring the main streets")
+    print(" [2] - Enter the alleyway and investigate the half-open door")
+    while True: #TO DO: potentially make a function for this as the failsafe is used multiple times
+        action = input("> ")
+        if action == "1":
+            break
+        elif action == "2":
+            break
+        else:
+            print("Please pick from one of the options listed!")
 
 if __name__ == '__main__':
     match main_menu():

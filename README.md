@@ -17,7 +17,7 @@ The game is played through a command-line interface, where you will enter text c
 
 ## Acknowledgements
 
-We would like to express our gratitude to the following resources and projects that inspired and helped us in creating The Forgotten Realm:
+I would like to express my gratitude to the following resources and projects that inspired and helped me in creating The Forgotten Realm:
 
 - [Random Game Idea Generator](https://seblague.github.io/ideagenerator/) by Seb Lague for the game prompt/idea.
 - [Coding & Such Ep.1](https://www.youtube.com/live/3O8OHiXyG-Q?feature=share) by b001 for inspiration and code snippets.

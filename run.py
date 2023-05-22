@@ -91,13 +91,15 @@ def command_handler(command):
 
 def generate_chest(): #Generates a chest of 3 random items from the loot pool, with a chance to have an empty chest
     items_pool = ["Health Potion", "Elixir of Strength", "Leather Boots", "Leather Helmet", "Shield", "Gold Coins", "Cloth", "Ruby"] #Loot pool can be changed
-    if random.randint(1, 10) == 3: #Small chance for a chest to be empty
-        print(chest)
+    if random.randint(1, 10) == 3: #Small chance for a chest to be empty, could be reused to become a chance that it is a mimic instead to add random events?
+        print("Unlucky, traveller, the chest was empty")
     else:
         for i in range(3): #For three items
             item = random.choice(items_pool) #Randomly pick something from the pool list
             chest.append(item) #and add it to the chest
+        inventory.extend(chest)
         print(chest)
+        print(inventory)
 
 
 #-----------------Game Stages-----------------#
@@ -162,16 +164,16 @@ def stage_two():
     print("As you shone your light agaisnt the edges of the room, a large circular pattern emerged, revealing a series of interconnected symbols etched into the stone.")
     print("It was a puzzle waiting to be deciphered")
     print("The symbols mimicked shapes of which you have never seen before")
-    print("Except for one.")
+    print("\nExcept for one.\n")
     print("You notice it in the center, a serpent coiled around a staff. A rush of anticipation surges through you as you realize this is a test of your intelligence, a challenge waiting to be conquered.")
-    print("Your mind races, searching for connections, seeking patterns, and drawing upon your lacking knowledge of ancient civilizations and symbolism.")
+    print("Your mind races, searching for connections, seeking patterns, and drawing upon your lacking knowledge of ancient civilizations and symbolism.\n")
     print("How do you proceed?")
     print(" [1] - Rotate the circle to reorient the staff")
     print(" [2] - Attempt to decode the scriptures")
     while True:
         action = input("> ")
         if action == "1":
-            print("You begin to gently rotate the puzzle, looking for patterns or hoping for a lucky alignment.")
+            print("\nYou begin to gently rotate the puzzle, looking for patterns or hoping for a lucky alignment.")
             print("As you continue the rotational exploration, a glimmer of hope emerges. You notice that as you turn the puzzle, certain symbols or markings on the serpent align with corresponding features on the staff")
             print("You become more methodical in your rotations, noting the specific alignments that occur at different angles.")
             print("With each rotation, you seem to draw closer to the conclusion of this quest")
@@ -179,10 +181,10 @@ def stage_two():
             print("Filled with anticipation and determination, you reach the most natural alignment. The door swings open, revealing what lies beyond")
             stage_three()
         elif action == "2":
-            print("You look closely at the serpent and staff, noting down any unique markings you observe")
+            print("\nYou look closely at the serpent and staff, noting down any unique markings you observe")
             print("Using your limited understanding of the lost relics of the realm, you rack your brain for references to ancient mythologies or subtle symbolisms")
             print("After some time, you discover that the markings reveal a message:")
-            print("'Let the cyclical nature guide your hand.'")
+            print("'\nLet the cyclical nature guide your hand.'\n")
             print("As you contemplate the enigmatic puzzle, you recall the message's intriguing directive.")
             print("A realisation overwhelms you as you turn the puzzle to match the cyclic nature of the serpents path")
             print("The door swings open, revealing what lies beyond")
@@ -192,16 +194,16 @@ def stage_two():
             print("Please input an appropriate choice from the list given")
 
 def stage_three():
-    print("A sense of awe washes over you")
+    print("\nA sense of awe washes over you")
     print("Before you stands a sight you could have never prepared to see when intially setting out to explore this realm.")
     print("A hidden, unknown ancient city, thriving with life stared back at you.")
-    print("The air is filled with a scent of antiquity mixed with a vibrant energy that pulses through the streets. Sunlight spills in through towering structures, casting long shadows on the cobblestone pathways below")
+    print("The air is filled with a scent of antiquity mixed with a vibrant energy that pulses through the streets. Sunlight spills in through towering structures, casting long shadows on the cobblestone below")
     print("The city resonates with the hum of activity as all forms of life navigate through the streets - vendors hawking their wares, their attire reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
-    print("You hesistantly begin to walk among them, taking note of their attire which reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
+    print("\nYou hesistantly begin to walk among them, taking note of their attire which reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
     print("As you wander through the ancient city further, you stumble upon a narrow alleyway that seems to beckon you with whispered secrets.")
     print("A flickering lantern casts eerie shadows on the worn cobblestones. Ahead, you notice a small, weathered door partially ajar. What will you do?") #The start of opening up the world to the player
     print(" [1] - Continue exploring the main streets")
-    print(" [2] - Enter the alleyway and investigate the half-open door")
+    print(" [2] - Enter the alleyway and investigate the half-open door") #TO DO: rewrite this to be seperate lines
     while True: #TO DO: potentially make a function for this as the failsafe is used multiple times
         action = input("> ")
         if action == "1":
@@ -211,10 +213,15 @@ def stage_three():
             print("Eager to learn about what the f*ck this place was, you lean in and engage with the elderly man")
             #TO DO: create a function that handles the bulk of NPC dialogue?
         elif action == "2":
-            print("The alleyway draws you closer as the sinister shadows dance beneath your feet.")
+            print("\nThe alleyway draws you closer as the sinister shadows dance beneath your feet.")
             print("With a cautious grip, you nudge the door open and it emits a squeal protesting the years of neglect.")
-            print("A sudden gust of stale air laced with a touch of mustiness envelops you, brushing against your face")
-            #Cobwebs, dusty, chest, loot, inventory
+            print("\nA sudden gust of stale air laced with a touch of mustiness envelops you, brushing against your face")
+            print("As you step into the room, the feeble illumination struggles to penetrate the layers of dust that cling to every surface")
+            print("Cobwebs hang delicately from the ceiling, their intricate threads glistening with age.")
+            print("Faded portraits hung askew on the walls, their subjects long lost to history")
+            print("\nIn one corner, partly obscured by the gloom, an old chest barely stands, the wood cracked and faded")
+            print("With a sense of anticipation, you shuffle over to the corner and open the chest")
+            generate_chest()
         else:
             print("Please pick from one of the options listed!")
 

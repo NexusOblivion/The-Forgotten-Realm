@@ -80,6 +80,9 @@ def command_handler(command):
         case "inventory":
             print("\nYou have the following items in your inventory:")
             print(inventory)
+        case "inv":
+            print("\nYou have the following items in your inventory:")
+            print(inventory)
         case "use":
             return
         case "examine":
@@ -92,14 +95,14 @@ def command_handler(command):
 def generate_chest(): #Generates a chest of 3 random items from the loot pool, with a chance to have an empty chest
     items_pool = ["Health Potion", "Elixir of Strength", "Leather Boots", "Leather Helmet", "Shield", "Gold Coins", "Cloth", "Ruby"] #Loot pool can be changed
     if random.randint(1, 10) == 3: #Small chance for a chest to be empty, could be reused to become a chance that it is a mimic instead to add random events?
-        print("Unlucky, traveller, the chest was empty")
+        print("\nUnlucky, the chest was empty!")
     else:
         for i in range(3): #For three items
             item = random.choice(items_pool) #Randomly pick something from the pool list
             chest.append(item) #and add it to the chest
         inventory.extend(chest)
-        print(chest)
-        print(inventory)
+        #TO DO: potentially change the string formatting to use items = ", ".join(chest) then print them out
+        print("\nThe following items: " + str(chest) + " were added to your inventory!")
 
 
 #-----------------Game Stages-----------------#
@@ -184,7 +187,7 @@ def stage_two():
             print("\nYou look closely at the serpent and staff, noting down any unique markings you observe")
             print("Using your limited understanding of the lost relics of the realm, you rack your brain for references to ancient mythologies or subtle symbolisms")
             print("After some time, you discover that the markings reveal a message:")
-            print("'\nLet the cyclical nature guide your hand.'\n")
+            print("\n'Let the cyclical nature guide your hand.'\n")
             print("As you contemplate the enigmatic puzzle, you recall the message's intriguing directive.")
             print("A realisation overwhelms you as you turn the puzzle to match the cyclic nature of the serpents path")
             print("The door swings open, revealing what lies beyond")
@@ -201,9 +204,10 @@ def stage_three():
     print("The city resonates with the hum of activity as all forms of life navigate through the streets - vendors hawking their wares, their attire reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
     print("\nYou hesistantly begin to walk among them, taking note of their attire which reflects the fashion of a bygone time, with flowing robes, intricate patterns, and accessories that speak of craftsmanship")
     print("As you wander through the ancient city further, you stumble upon a narrow alleyway that seems to beckon you with whispered secrets.")
-    print("A flickering lantern casts eerie shadows on the worn cobblestones. Ahead, you notice a small, weathered door partially ajar. What will you do?") #The start of opening up the world to the player
+    print("A flickering lantern casts eerie shadows on the worn cobblestones. Ahead, you notice a small, weathered door partially ajar.") #The start of opening up the world to the player
+    print("What will you do?")
     print(" [1] - Continue exploring the main streets")
-    print(" [2] - Enter the alleyway and investigate the half-open door") #TO DO: rewrite this to be seperate lines
+    print(" [2] - Enter the alleyway and investigate the half open door") #TO DO: rewrite this to be seperate lines
     while True: #TO DO: potentially make a function for this as the failsafe is used multiple times
         action = input("> ")
         if action == "1":
@@ -222,6 +226,11 @@ def stage_three():
             print("\nIn one corner, partly obscured by the gloom, an old chest barely stands, the wood cracked and faded")
             print("With a sense of anticipation, you shuffle over to the corner and open the chest")
             generate_chest()
+            while True: 
+                command = input("> ") 
+                if command.startswith("="): 
+                    command_handler(command)
+                    break
         else:
             print("Please pick from one of the options listed!")
 

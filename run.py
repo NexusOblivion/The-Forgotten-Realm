@@ -212,7 +212,7 @@ def stage_three():
         action = input("> ")
         if action == "1":
             print("You override the primal temptation to explore the mystifying alleyway and continue through the bustling markets lost to time")
-            print("Approaching a nearby merchant, your footsteps echoed against the dying sense of the city streets drawing the attention of all those around")
+            print("Approaching a nearby merchant, your footsteps echoed against the dying sense of the streets drawing the attention of all those around")
             print("Your prescence wasn't welcomed.")
             print("Eager to learn about what the f*ck this place was, you lean in and engage with the elderly man")
             #TO DO: create a function that handles the bulk of NPC dialogue?
@@ -231,6 +231,8 @@ def stage_three():
                 if command.startswith("="): 
                     command_handler(command)
                     break
+            print("Your heart races with excitment as you hit the ???/")
+            print("You make your way out of the alleyway, stepping out into the sunlight the virbance of the unknown world envelops your senses.")
         else:
             print("Please pick from one of the options listed!")
 
